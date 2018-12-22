@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>GET MEMORY</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+
+    <style>
+            #header a{
+                font-size: 20px;
+                color: red;
+            }
+            .pre-header {
+                list-style: none; /* Remove list bullets */
+            }
+            /* hover dropdown menus */
+            @media only screen and (max-width: 991px) {
+                .navbar-hover .show > .dropdown-toggle::after{
+                    transform: rotate(-90deg);
+                }
+            }
+            @media only screen and (min-width: 992px) {
+                .navbar-hover .collapse ul li{position:relative;}
+                .navbar-hover .collapse ul li:hover> ul{display:block}
+                .navbar-hover .collapse ul ul{position:absolute;top:100%;left:0;min-width:250px;display:none}
+                .navbar-hover .collapse ul ul ul{position:absolute;top:0;left:100%;min-width:250px;display:none}
+                /*.navbar-hover .collapse ul ul ul ul{position:absolute;top:0;left:-100%;min-width:250px;display:none;z-index:1}*/
+               /* #navbarHover {margin-left: 40%;}*/
+            }
+            body {
+                font-family: 'Roboto', sans-serif;
+                font-size: 14px;
+                line-height: 1.42857143;
+            }
+            #top-nav {
+                box-shadow: 0 4px 2px -2px #888888;
+            }
+            /* 
+            I will show you how to change a height of a standard Bootstrap navbar.
+            */
+            /*
+            .navbar {
+            min-height: 70px;
+            }
+
+            .navbar-brand {
+            padding: 0 15px;
+            height: 70px;
+            line-height: 70px;
+            }
+            
+            .navbar-toggle {
+            //(80px - button height 34px) / 2 = 23px
+            margin-top: 18px;
+            padding: 9px 10px !important;
+            }
+
+            @media (min-width: 768px) {
+            .navbar-nav > li > a {
+                //(80px - line-height of 27px) / 2 = 26.5px
+                padding-top: 21.5px;
+                padding-bottom: 21.5px;
+                line-height: 27px;
+            }
+            }*/
+            /*---End change height navbar--*/
+            #navbarHover {
+                font-size: 18px;
+            }
+            #navbarHover a:hover {
+                border-bottom: 3px solid red;
+            }
+
+            #navbarHover a.active {
+                border-bottom: 3px solid red;
+            }
+            #imgintro {
+                background-image: url('./Image/backgroundIntro.jpg');
+                position: relative;
+                color:white;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-attachment: fixed;
+            }
+            #ovlimgintro {
+                background-color: #ef3e42;
+                position: absolute;
+                display: block;
+                width: 100%;
+                opacity: .85;
+                height: 100%;
+            }
+            .jumbotron-text {
+                text-align: center;
+            }
+            .jumbotron-text p{
+                /*margin-bottom: 20px !important;*/
+                font-size: 23px !important;
+                /*margin: 0 0 20px;*/
+                font-weight: 200;
+            }
+            .btn-intro {
+                background-color: red;
+                border-color: white;
+                border-radius: 0px;
+               -webkit-transition: all 400ms;
+                transition: all 400ms;
+            }
+            .btn-intro:hover {
+                border-color: white;
+                border-radius: 10px 0px 10px 0px;
+                box-shadow: 0px 0.5px 5px 1px white;
+            }
+            .contentEx {
+                padding-top: 30px;
+                padding-bottom: 30px;
+            }
+            .bnt-contentLearnmore {
+                font-size: 16px;
+                margin-bottom: 0px;
+            }
+            .subContent {
+                padding-top: 10px; 
+            }
+            .text-blue-base {
+                color: #497c9f;
+            }
+            .icon-box {
+                border: 1px solid #afafaf;
+               /* width: 125px;
+                height: 175px;
+                padding: 20px 0;
+                padding-top: 15px;
+                text-align: center;
+                margin: 15px 10px;*/
+                -webkit-transform-style: preserve-3d;
+                transform-style: preserve-3d;
+                /*display: block;
+                float: left;*/
+            }
+            .pre-footer {
+                background: #343a3d;
+                height: 75px;
+                font-size: 18px;
+                color: white;
+            }
+            .white {
+                color: white;
+            }
+            .white :hover{
+                color: white;
+            }
+            #infofooter {
+                background-color: black;
+                color: white;
+            }
+            .listSubMenu {
+                color: white;
+                font-size: 16px;
+            }
+            /*--FIX NAV--*/
+            /*--END NAV--*/
+            /*COMPARE height DIV */
+           /* .row.display-flex {
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .row.display-flex > [class*='col-'] {
+            display: flex;
+            flex-direction: column;
+            }
+            */
+
+            @media (max-width: 576px) {
+                #introtext {
+                    font-weight: 200;
+                }
+                .jumbotron-text p{
+                    font-size: 14px !important;
+                    font-weight: 200;
+                }
+                .introbutton {
+                    padding-bottom: 10%;
+                }
+                .hidden-xs {
+                    display: none !important;
+                }
+            }
+            @media (max-width: 768px) {
+                .introbutton {
+                    padding-bottom: 10%;
+                }
+                .hidden-xs {
+                    display: none !important;
+                }       
+            }
+            @media (min-width: 768px) {
+                #introtext {
+                    font-weight: 200;                  
+                }
+                .jumbotron-text p{
+                    font-size: 23px !important;
+                    font-weight: 200;
+                }
+                .introbutton {
+                    padding-bottom: 10%;
+                }
+                .visible-xs, .visible-sm, .visible-md, .visible-lg {
+                    display: none !important;
+                } 
+            }
+            @media (min-width: 992px) {
+                #introtext {
+                    font-weight: 200;
+                    font-size: 60px;
+                }
+                #imgintro {
+                    min-height: 400px;
+                }
+                .visible-xs, .visible-sm, .visible-md, .visible-lg {
+                    display: none !important;
+                } 
+            }
+            @media (min-width: 1200px) {
+                #introtext {
+                    font-weight: 200;
+                    font-size: 60px;                    
+                }
+                #imgintro {
+                    min-height: 400px;
+                }
+                .visible-xs, .visible-sm, .visible-md, .visible-lg {
+                    display: none !important;
+                }
+            }
+        </style>
+</head>
+<body>
+
+        <div id="page-wrap">
+            <div class="clearfix" id="header">
+                <div class="container">
+                        <ul class="nav justify-content-end pre-header">
+                                <li class="nav-item"><a class="nav-link" href="tel:0935463469"><i class="fa fa-phone" aria-hidden="true" style="font-size: 24px;"></i> 0935463469</a></li>
+                        </ul>
+                </div>
+            </div><!--header-->
+            <div class="clearfix sticky-top" id="top-nav" style="background-color:#f9f9f9">
+                    <div class="container">
+                                <nav class="navbar navbar-expand-sm bg-light navbar-light navbar-hover py-sm-3">
+                                    <div class="col-md-6"><a class="navbar-brand" href="#">Navbar</a>
+                                        <button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbarHover" aria-controls="navbarDD" aria-expanded="false" aria-label="Navigation">
+                                            <span class="navbar-toggler-icon"></span>
+                                        </button>
+                                    </div>
+                                    <div class="collapse navbar-collapse col-md-6" id="navbarHover">
+                                        <ul class="navbar-nav">
+                                            <li class="nav-item pr-4" style="white-space: nowrap;">
+                                                <a class="nav-link active" href="#"><i class="fa fa-home" aria-hidden="true" style="font-size:18px;"></i>Home <span class="sr-only">(current)</span></a>
+                                            </li>
+                                            <li class="nav-item pr-4">
+                                                <a class="nav-link" href="#">Features</a>
+                                            </li>
+                                            <li class="nav-item pr-4">
+                                                <a class="nav-link" href="#">Pricing</a>
+                                            </li>
+                                            <li class="nav-item dropdown pr-4" style="white-space: nowrap;">
+                                                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    Hover
+                                                </a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a class="dropdown-item" href="#">Link</a></li>
+                                                    <li><a class="dropdown-item" href="#">Link</a></li>
+                                                    <li><a class="dropdown-item dropdown-toggle" href="#">Submenu</a>
+                                                        <ul class="dropdown-menu">
+                                                            <li><a class="dropdown-item" href="#">Submenu link</a></li>
+                                                            <li><a class="dropdown-item" href="#">Submenu link 2</a></li>
+                                                            <li><a class="dropdown-item dropdown-toggle" href="#">Subsubmenu</a>
+                                                                <ul class="dropdown-menu">
+                                                                    <li><a class="dropdown-item" href="#">Subsubmenu 1</a></li>
+                                                                    <li><a class="dropdown-item" href="#">Subsubmenu 2</a></li>
+                                                                </ul>
+                                                            </li>
+                                                            <li><a class="dropdown-item dropdown-toggle" href="#">Subsubmenu 2</a>
+                                                                <ul class="dropdown-menu">
+                                                                    <li><a class="dropdown-item" href="#">Subsubmenu 2.1</a></li>
+                                                                    <li><a class="dropdown-item" href="#">Subsubmenu 2.2</a></li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li><a class="dropdown-item dropdown-toggle" href="#">Submenu 2</a>
+                                                        <ul class="dropdown-menu">
+                                                            <li><a class="dropdown-item" href="#">Submenu 2 link</a></li>
+                                                            <li><a class="dropdown-item" href="#">Submenu 2 link 2</a></li>
+                                                            <li><a class="dropdown-item dropdown-toggle" href="#">Subsubmenu 2</a>
+                                                                <ul class="dropdown-menu">
+                                                                    <li><a class="dropdown-item" href="#">Link</a></li>
+                                                                    <li><a class="dropdown-item" href="#">Link</a></li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </nav>
+                            <!--</div>-->
+                    </div>
+                </div><!--header topnav-->
+            <!--intro image primary-->
+            <div id="imgintro">
+                <div id="ovlimgintro"></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="jumbotron-text"> 
+                                <h2 style="text-transform: uppercase" id="introtext">
+                                    <br>DON'T LOSE OUT BY PAYING HIGHER INTEREST ELSEWHERE.
+                                </h2>
+                                <p>TRAN VU THAI BINH</p>
+                                <div class="row my-auto introbutton">
+                                    <div class="col-md-offset-4 col-md-4 mx-auto">
+                                        <a aria-label="TRAN VU THAI BINH" class="btn btn-danger btn-lg btn-block btn-intro" href="/bank/credit-cards" role="button">CLICK ME</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--END intro image primary-->
+            <!-- CONTENT-->
+            <div class="container">
+                <div class="row display-flex">
+                        <div class="col-md-7 contentEx">
+                            <div id="imageContentLeft" class="mx-auto col-lg-9 col-md-9">
+                                    <img src="./Image/thumbnail.jpg" alt="..." class="img-thumbnail img-fluid w-75 rounded mx-auto d-block">
+                            </div>
+                            <h4 class="text-muted subContent">Nó đến từ đâu?</h4>
+                            <div id="contentLeft">
+                                <p class="h5">Trái với quan điểm chung của số đông, Lorem Ipsum không phải chỉ là một đoạn văn bản ngẫu nhiên. Người ta tìm thấy nguồn gốc của nó từ những tác phẩm văn học la-tinh cổ điển xuất hiện từ năm 45 trước Công Nguyên, nghĩa là nó đã có khoảng hơn 2000 tuổi. Một giáo sư của trường Hampden-Sydney College (bang Virginia - Mỹ) quan tâm tới một trong những từ la-tinh khó hiểu nhất, "consectetur", trích từ một đoạn của Lorem Ipsum, và đã nghiên cứu tất cả các ứng dụng của từ này trong văn học cổ điển, để từ đó tìm ra nguồn gốc không thể chối cãi của Lorem Ipsum. Thật ra, nó được tìm thấy trong các đoạn 1.10.32 và 1.10.33 của "De Finibus Bonorum et Malorum" (Đỉnh tối thượng của Cái Tốt và Cái Xấu) viết bởi Cicero vào năm 45 trước Công Nguyên. Cuốn sách này là một luận thuyết đạo lí rất phổ biến trong thời kì Phục Hưng. Dòng đầu tiên của Lorem Ipsum, "Lorem ipsum dolor sit amet..." được trích từ một câu trong đoạn thứ 1.10.32.</p>
+                                <p class="h5"> Trích đoạn chuẩn của Lorem Ipsum được sử dụng từ thế kỉ thứ 16 và được tái bản sau đó cho những người quan tâm đến nó. Đoạn 1.10.32 và 1.10.33 trong cuốn "De Finibus Bonorum et Malorum" của Cicero cũng được tái bản lại theo đúng cấu trúc gốc, kèm theo phiên bản tiếng Anh được dịch bởi H. Rackham vào năm 1914.</p>
+                                <a aria-label="LEARN MORE" class="btn btn-danger btn-lg btn-block btn-intro bnt-contentLearnmore w-50" href="/bank/credit-cards" role="button">LEARN MORE</a>
+                            </div>
+                        </div>
+                        <div class="col-md-5 contentEx"style="background-color: #f9f9f9;">
+                                <div id="imageContentRight" class="mx-auto">
+                                    <img src="./Image/thumbnail.jpg" alt="..." class="img-thumbnail img-fluid w-75 rounded mx-auto d-block">
+                                </div>
+                                <h4 class="text-muted subContent">Lorem Ipsum là gì?</h4>
+                                <div id="contentRight">
+                                    <p class="h5">Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được dùng vào việc trình bày và dàn trang phục vụ cho in ấn. Lorem Ipsum đã được sử dụng như một văn bản chuẩn cho ngành công nghiệp in ấn từ những năm 1500, khi một họa sĩ vô danh ghép nhiều đoạn văn bản với nhau để tạo thành một bản mẫu văn bản. Đoạn văn bản này không những đã tồn tại năm thế kỉ, mà khi được áp dụng vào tin học văn phòng, nội dung của nó vẫn không hề bị thay đổi. Nó đã được phổ biến trong những năm 1960 nhờ việc bán những bản giấy Letraset in những đoạn Lorem Ipsum, và gần đây hơn, được sử dụng trong các ứng dụng dàn trang, như Aldus PageMaker</p>
+                                    <a aria-label="LEARN MORE" class="btn btn-danger btn-lg btn-block btn-intro bnt-contentLearnmore w-50" href="/bank/credit-cards" role="button">LEARN MORE</a>
+                                </div>
+                        </div>
+                </div>
+            </div>
+            <!-- END CONTENT-->
+            <!--Services-->
+            <div id="services" class="py-4">
+                    <div class="container">
+                        <h4 class="text-center text-muted subtextservices py-4">Các dịch vụ</h4>
+                        <div class="row">
+                            <div class="col-md-4 pb-2">
+                                <div id="imageservices1" class="icon-box text-center mx-auto py-5">
+                                    <i class="fa fa-home fa-3x text-blue-base" aria-hidden="true"></i>
+                                    <p class="h6">Trang chủ</p>
+                                </div>
+                            </div>                           
+                            <div class="col-md-4 pb-2">
+                                <div id="imageservices2" class="icon-box text-center mx-auto py-5">
+                                    <i class="fa fa-shopping-cart fa-3x text-blue-base" aria-hidden="true"></i>
+                                    <p class="h6">Mua sắm</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 pb-2">
+                                <div id="imageservices3" class="icon-box text-center mx-auto py-5">
+                                    <i class="fa fa-mobile fa-3x text-blue-base" aria-hidden="true"></i>
+                                    <p class="h6">Tải Ứng Dụng Mobile</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <!--End Services-->
+            <!--Pre-footer-->
+            <div class="pre-footer hidden-print py-4">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 hidden-xs mx-auto">
+                                <div class="pre-footer-label white"><i class="fa fa-address-book-o pr-1" style="font-size:18px"></i><span>LIÊN LẠC:</span></div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-6 col-6 mx-auto">
+                                <div class="pre-footer-label white"><i class="fa fa-phone-square pr-1" style="font-size:18px"></i><a class="white" href="tel:0935463469">0935463469</a></div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 hidden-sm hidden-xs centered-text mx-auto">
+                                <div class="pre-footer-label white"><i class="fa fa-envelope-o pr-1" style="font-size:18px"></i><a class="white" href="mailto:mollertran@gmail.com">mollertran@gmail.com</a></div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-6 visible-sm visible-xs centered-text mx-auto">
+                                <div class="pre-footer-label white"><i class="fa fa-envelope-o pr-1" style="font-size:18px"></i><a class="white" href="mailto:mollertran@gmail.com">Email Us</a></div>
+                            </div>
+                        </div>
+                    </div>
+            </div>            
+            <!--End Pre-footer-->
+            <!--Info-footer-->
+            <div id="infofooter" class="py-5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4">
+                            <h3>THÔNG TIN LIÊN HỆ</h3>
+                        </div>
+                        <div class="col-lg-4 col-md-4">
+                            <h3>DANH MỤC WEBSITE</h3>
+                            <div class="list-group" id="myList" role="tablist">
+                                    <a class="listSubMenu py-1" href="#home">Home</a>
+                                    <a class="listSubMenu py-1" href="#profile" role="tab">Profile</a>
+                                    <a class="listSubMenu py-1" href="#messages" role="tab">Messages</a>
+                                    <a class="listSubMenu py-1" href="#settings" role="tab">Settings</a>
+                                  </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4">
+                            <h3>Socical</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--End Info-footer-->
+        </div><!--page_wrap-->
+</body>
+</html>
+<script>
+    $( '.dropdown-menu .dropdown-toggle' ).on('click', function() {
+        var $el = $(this);
+        var $parent = $el.offsetParent(".dropdown-menu");
+        
+        if (!$el.next().hasClass("show")) {
+            $el.parents('.dropdown-menu').first().find(".show").removeClass("show");
+        }
+        $el.next(".dropdown-menu").toggleClass("show").parent("li").toggleClass("show");
+        
+        $el.parents("li.nav-item.dropdown.show").on("hidden.bs.dropdown", function () {
+            $(".dropdown-menu .show").removeClass("show");
+        });
+        
+        if (!$parent.parent().hasClass("navbar-nav")) {
+            $el.next().css({"top":$el[0].offsetTop,"left":$parent.outerWidth()});
+        }
+        
+        return false;
+    });
+    $('.navbar-nav .nav-link').click(function(){
+        $('.navbar-nav .nav-link').removeClass('active');
+        $(this).addClass('active');
+})
+</script>
